@@ -1,0 +1,14 @@
+function e(e,r,t,s){Object.defineProperty(e,r,{get:t,set:s,enumerable:!0,configurable:!0})}var r=globalThis,t={},s={},a=r.parcelRequired414;null==a&&((a=function(e){if(e in t)return t[e].exports;if(e in s){var r=s[e];delete s[e];var a={id:e,exports:{}};return t[e]=a,r.call(a.exports,a,a.exports),a.exports}var l=Error("Cannot find module '"+e+"'");throw l.code="MODULE_NOT_FOUND",l}).register=function(e,r){s[e]=r},r.parcelRequired414=a);var l=a.register;l("7PxmF",function(r,t){e(r.exports,"Data",()=>o);var s=a("gMXFy"),l=a("eLgyL");class o{async FetchData(e){try{l.loadingMessage.style.display="block",s.errorMessage.style.display="none";let r=await fetch(`https://jsonplaceholder.typicode.com/${e}`);if(!r.ok)throw Error(`HTTP error! status: ${r.status}`);let t=await r.json();return l.loadingMessage.style.display="none",t}catch(e){return l.loadingMessage.style.display="none",s.errorMessage.style.display="block",s.errorMessage.textContent=`Failed to load users: ${e.message||"Unknown error"}`,[]}}async FetchSingleObj(e,r){try{let t=await fetch(`https://jsonplaceholder.typicode.com/${e}/${r}`);if(!t.ok)throw console.log(`HTTP error! status: ${t.status}`),Error(`HTTP error! status: ${t.status}`);let s=await t.json();return console.log("data",s),s}catch(e){return null}}}}),l("gMXFy",function(r,t){e(r.exports,"errorMessage",()=>s);let s=document.getElementById("error-message")}),l("eLgyL",function(r,t){e(r.exports,"loadingMessage",()=>s);let s=document.getElementById("loading-message")});var o=a("7PxmF");let n=document.getElementById("album-container");var i=a("eLgyL");let u=document.getElementById("album-container");new class{display(e){null!=n&&(n.innerHTML="",0==e.length&&(u.innerHTML="<li>No users found.</li>",this.errorMessage()),e.forEach(e=>{let r=document.createElement("div");r.className="album-box",r.innerHTML=`
+                    
+                        <div class='album-image-wrapper'>
+                        <img src='/album.c1376b2a.jpg'  alt="Default Album Cover" class="album-image" loading='lazy'> 
+                        </div>
+                      <div class='album-info'>
+                        <h3><strong >Title: ${e.title}</strong></h3>
+                       <p><a  href="/user/user.html?userId=${e.userId}">creator</a></p>
+                       <div>
+                      
+                      
+                       
+                  `,n.appendChild(r)}))}async DisplayAlbums(){this.load()}async load(){let e=new(0,o.Data);return document.addEventListener("DOMContentLoaded",async()=>{console.log("DOM fully loaded and parsed. Fetching users...");let r=await e.FetchData("albums");if(r.length>0)return this.AllAlbums=r,this.display(r)}),[]}errorMessage(){if(!n||!i.loadingMessage||!this.errorMessage)throw console.error("Critical DOM elements not found!"),Error("Required DOM elements missing.");return null}constructor(){this.AllAlbums=[]}}().DisplayAlbums();
+//# sourceMappingURL=albums.d7223437.js.map
