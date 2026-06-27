@@ -71,7 +71,7 @@ export class User{
     document.addEventListener('DOMContentLoaded', () => {
     // Initialize appContainer when the DOM is ready
     const userid:string = this.getQueryParam("userId") || "" ;
-    console.log(userid);
+   // console.log(userid);
     this.LoaduserInfo(userid );
     })
 }

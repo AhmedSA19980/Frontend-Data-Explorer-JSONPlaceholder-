@@ -6,7 +6,7 @@ import { Data } from "../../data/data";
 import { userList } from "element/List";
 import { SearchInput } from "element/search";
 import { Search } from "module/search/search";
-import { User } from "./user";
+
 
 export class DisplayUserInfo implements DisplayForm<IUser> {
   private AllUsers: IUser[] = [];
