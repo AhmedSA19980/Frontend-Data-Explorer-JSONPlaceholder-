@@ -1,1 +1,2 @@
-# Person_Note
+# Display Person Activities
+
